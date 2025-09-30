@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Enrollment
+comment1.params=mahasiswa\ mataKuliah\ semester
+comment1.target=Enrollment(Mahasiswa,\ MataKuliah,\ java.lang.String)
+comment2.params=
+comment2.target=Mahasiswa\ getMahasiswa()
+comment3.params=
+comment3.target=MataKuliah\ getMataKuliah()
+comment4.params=
+comment4.target=java.lang.String\ getSemester()
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6

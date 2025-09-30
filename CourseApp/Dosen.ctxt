@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Dosen
+comment1.params=nip\ nama\ jabatan
+comment1.target=Dosen(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getNip()
+comment3.params=
+comment3.target=java.lang.String\ getNama()
+comment4.params=
+comment4.target=java.lang.String\ getJabatan()
+comment5.params=nama
+comment5.target=void\ setNama(java.lang.String)
+comment6.params=
+comment6.target=java.lang.String\ toString()
+numComments=7
