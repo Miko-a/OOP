@@ -29,7 +29,8 @@ public class LibraryCatalog {
         int choice; 
              
         do { 
-            System.out.println("\n=== Library Catalog ===");  System.out.println("1. Tambah Buku"); 
+            System.out.println("\n=== Library Catalog ===");  
+            System.out.println("1. Tambah Buku"); 
             System.out.println("2. Lihat Semua Buku"); 
             System.out.println("3. Cari Buku"); 
             System.out.println("4. Hapus Buku"); 
