@@ -35,8 +35,10 @@ public class StudentRecordSystem {
         int choice; 
         
         do { 
-            System.out.println("\n=== Student Record System ===");  System.out.println("1. Tambah Mahasiswa"); 
-            System.out.println("2. Lihat Semua Mahasiswa");  System.out.println("3. Cari Mahasiswa"); 
+            System.out.println("\n=== Student Record System ===");  
+            System.out.println("1. Tambah Mahasiswa"); 
+            System.out.println("2. Lihat Semua Mahasiswa");  
+            System.out.println("3. Cari Mahasiswa"); 
             System.out.println("4. Hapus Mahasiswa"); 
             System.out.println("5. Keluar"); 
             System.out.print("Pilih menu: "); 
