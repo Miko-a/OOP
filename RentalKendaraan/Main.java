@@ -131,7 +131,6 @@ public class Main {
                     }
                     if (foundIndex >= 0) {
                         mainObj.penyewaVar.remove(foundIndex);
-                        mainObj.clearConsole();
                         System.out.println("Sewa berhasil dibatalkan.");
                     } else {
                         mainObj.clearConsole();
