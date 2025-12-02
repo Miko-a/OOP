@@ -24,9 +24,15 @@ public class SimulatorView {
 
                 if(animal == null){
                     System.out.print(". ");
-                }else{
+                } else {
+                    // Ambil simbol dari map berdasarkan class hewan
                     Character symbol = symbols.get(animal.getClass());
-                    System.out.print((symbol != null ? symbol : '?') + " ");
+                    if (symbol != null) {
+                        System.out.print(symbol + " ");
+                    } else {
+                        // Fallback jika class tidak terdaftar
+                        System.out.print("? ");
+                    }
                 }
             }
             System.out.println();
