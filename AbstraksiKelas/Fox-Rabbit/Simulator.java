@@ -47,35 +47,52 @@ public class Simulator {
     public void simulateOneStep(){
         step++;
 
-        List<Animal> newAnimals = new ArrayList<Animal>();
-        for(Iterator<Animal> it = animals.iterator(); it.hasNext();){
+        List<Animal> newAnimals = new ArrayList<>();
+
+        // Iterasi aman dengan Iterator agar bisa remove saat berjalan
+        for (Iterator<Animal> it = animals.iterator(); it.hasNext(); ) {
             Animal animal = it.next();
             animal.act(newAnimals);
+            if (!animal.isAlive()) {
+                it.remove();
+            }
         }
+
+        // Tambahkan hewan baru (jika nanti ada reproduksi)
+        animals.addAll(newAnimals);
+
+        // Tampilkan status grid
         view.show(step, field);
     }
 
     private void populate(){
-        field.clearAll();
+        // Probabilitas populasi awal (sesuaikan jika perlu)
+        final double FOX_CREATION_PROBABILITY = 0.20;
+        final double RABBIT_CREATION_PROBABILITY = 0.30;
 
-        double foxProbability = 0.2;
-        double rabbitProbability = 0.3;
+        // Asumsikan Field menyediakan ukuran melalui getter
+        int rows = field.getRow();
+        int cols = field.getCol();
 
-        Random rand = new Random();
-        for(int i = 0; i < field.getRow(); i++){
-            for(int j = 0; j < field.getCol(); j++){
-                Location location = new Location(i, j);
-                
-                if(rand.nextDouble() <= foxProbability){
-                    Fox fox = new Fox(false, field, location);
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                Location loc = new Location(r, c);
+
+                // Pastikan sel kosong sebelum menempatkan
+                if (field.getObjectAt(loc) != null) continue;
+
+                double roll = Animal.rand.nextDouble();
+
+                if (roll <= FOX_CREATION_PROBABILITY) {
+                    Fox fox = new Fox(true, field, loc);
                     animals.add(fox);
-                    field.place(fox, location);
+                    field.place(fox, loc);
                 }
-
-                if(rand.nextDouble() <= rabbitProbability){
-                    Rabbit rabbit = new Rabbit(true, field, location);
+                // else-if memastikan hanya satu spesies per sel
+                else if (roll <= FOX_CREATION_PROBABILITY + RABBIT_CREATION_PROBABILITY) {
+                    Rabbit rabbit = new Rabbit(true, field, loc);
                     animals.add(rabbit);
-                    field.place(rabbit, location);
+                    field.place(rabbit, loc);
                 }
             }
         }
