@@ -19,9 +19,9 @@ import java.sql.ResultSet;
 public class JavaCRUD {
     // Konstanta untuk koneksi database
     static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  // Driver MySQL
-    static final String DB_URL = "jdbc:mysql://localhost/perpustakaan";  // URL database
+    static final String DB_URL = "jdbc:mysql://localhost:4306/perpustakaan?useSSL=false&serverTimezone=UTC";  // URL database
     static final String USER = "root";  // Username MySQL
-    static final String PASS = "kopi";  // Password MySQL
+    static final String PASS = "";  // Password MySQL
     
     // Objek untuk koneksi dan eksekusi query
     static Connection conn;  // Koneksi ke database
